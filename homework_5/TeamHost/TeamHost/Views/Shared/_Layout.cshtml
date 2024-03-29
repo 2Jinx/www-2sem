@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>TeamHost - Join now and play mighty games!</title>
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
+        <link rel="stylesheet" href="~/TeamHost.styles.css" asp-append-version="true"/>
+        <meta content="Templines" name="author">
+        <meta content="TeamHost" name="description">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="format-detection" content="telephone=no">
+        <meta content="IE=edge" http-equiv="X-UA-Compatible">
+        <link rel="shortcut icon" href="~/img/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="~/css/libs.min.css">
+        <link rel="stylesheet" href="~/css/main.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
+    </head>
+    <body class="page-community">
+        <div class="page-wrapper">
+            <partial name="_Header"/>
+            <div class="page-content">
+                <partial name="_LeftMenu"/>
+                @RenderBody()
+            </div>
+        </div>
+        <div class="page-modals">    
+            @await Html.PartialAsync("_Report")
+            @await Html.PartialAsync("_Help")
+        </div>
+        <script src="~/js/libs.js"></script>
+        <script src="~/js/main.js"></script>
+        @await RenderSectionAsync("Scripts", required: false)
+    </body>
+</html>
